@@ -1,0 +1,160 @@
+\documentclass{beamer}
+%\documentclass[show notes,handout]{beamer}
+
+\usepackage{amssymb}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+
+
+\pgfplotsset{width=10cm,compat=1.9}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
+\usetheme{Boadilla}
+
+
+\definecolor{student}{rgb}{255, 255, 255}  % white - use for student version
+%\definecolor{student}{rgb}{0,0.6,0}  % green - use for full version
+
+
+\textwidth 4.7in
+
+\oddsidemargin -.7 in
+\begin{document}
+
+
+\title[Productivity Tip]{Productivity Tip}
+
+\author{Ralf Becker}
+
+
+\frame{\titlepage}
+
+\section{INTRODUCTION}
+
+
+\begin{frame}{Gaps in your slides}
+
+\begin{columns}
+	\begin{column}{6cm}
+		\textbf{Lecturer version}
+		\begin{enumerate}
+			\item Write \textbf{only} one version of your document
+			\item Decide what text your students should see and what text they should not see
+			\item From one doc produce different student and lecturer versions
+			\item Define a special color (here "student")
+			\item Merely need to change the definition of the color
+		\end{enumerate}
+	\end{column}
+	\begin{column}{6cm}
+		\textbf{Student version}
+		\begin{enumerate}
+			\item Write \textcolor{student}{\textbf{only} one} version version of your document
+			\item Decide what text your students should see and what text they \textcolor{student}{should not see}
+			\item From one doc produce different student and lecturer versions
+			\item Define a special color (here \textcolor{student}{"student"})
+			\item Merely need to change the definition of the color
+		\end{enumerate}
+		
+	\end{column}
+\end{columns}
+
+\end{frame}
+
+
+% Great for giving students work examples
+
+\begin{frame}{Domain \& Range - Examples}
+	What are the domain and range of the following functions?
+	\begin{enumerate}
+		\item $g(x)=\frac{1}{x+3}-5$\\
+		\textcolor{student}{Need denominator $\neq 0$. Hence $x=-3$. \\
+			This implies that the domain is $x\in \mathbb{R}|x \neq -3$.\\
+			$g(x)$ can take $\infty$ for values of $x$ just over 3 and $-\infty$ for values just below 3. It cannot take the value of $-5$ as the first term cannot be equal to 0.}
+		\item $f(x)=\sqrt{\frac{x-2}{x+1}}$\\
+		\textcolor{student}{We need $A=(x-2)/(x+1)$ to be non-negative and $x+1 \neq 0$. Hence $x=-1$ is not in the domain. For $x \geq 2$ and for $x<-1$ $A$ is positive. \\
+			Hence domain is $x<-1$ or $x \geq 2$.\\
+			The range is from  0 to $\infty$ but not 1 as $A$ will never be equal to 1.}
+	\end{enumerate}
+	
+\end{frame}
+
+
+
+
+% Works for graphs as well
+\begin{frame}{Function graphing}
+	
+	
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			
+			Assign to each real number its square:
+			
+			$%
+			\begin{array}{l}
+			x\rightarrow x^{2},\;\;\;x\in \mathbb{R} \\ 
+			\\ 
+			
+			f(x)=x^{2},\;\;\;x\in \mathbb{R} \\ 
+			\\ 
+			
+			f(2)=4, \\ 
+			\\ 
+			
+			
+			f(-2)=4 \\ 
+			\\ 
+			
+			
+			
+			f(3)=9%
+			\end{array}%
+			$%		
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			
+			\begin{figure}
+				
+				\resizebox{5.0cm}{!}{
+					\begin{tikzpicture}{scale=0.1}
+					
+					\begin{axis}[
+					axis lines = center,
+					xlabel = $x$,
+					ylabel = {$f(x)$},
+					]
+					%Below the red parabola is defined
+					\addplot [
+					domain=-3:3, 
+					samples=100, 
+					color=student,
+					]
+					{x^2};
+					
+					\end{axis}
+					
+					\end{tikzpicture}
+				}
+			\end{figure}
+			
+		\end{column}
+		
+	\end{columns}
+	
+	
+\end{frame}
+
+
+
+\end{document}
+
