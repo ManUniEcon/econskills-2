@@ -32,24 +32,67 @@ You could also browse a range of websites which link to a variety of datasets:
 
 ## Spreadsheet Skills
 
-Most data will come in some form of sreadsheet. As an economist it is vital that you have spreadsheet skills which will allow you to handle and explore the data. You even do some proper data analysis in the spreadsheet althouh, for more advanced analysis, you are likely to use some other software (see [Econometrics](#Econometrics) section).
+Most data will come in some form of sreadsheet. As an economist it is vital that you have spreadsheet skills which will allow you to handle and explore the data. You can even do some proper data analysis in the spreadsheet although, for more advanced analysis, you are likely to use some other software (see [Econometrics](#Econometrics) section).
 
 Different spreadsheet programmes exist but the most poplar ones are Microsoft Excel and Google Sheets.
 
-You should be able to do the following things in a spreadsheet:
+There are numerous resources available online and for free to help you learn or refresh these skills. Use an internet search engine or search in YouTube to find help on whatever it is you want to learn. If you want more structured and complete advice you may want to follow an [online course in Excel](https://digitaldefynd.com/best-excel-tutorial-training-course-classes){target="_blank}. They are typically free or very cheap.
 
-* Open/Import datasets
-* Deal with dates
-* Sort and filter data
-* Use formulae
-* Create graphical data representations
-* Merge datasets using the vlookup command
-* Optimise functions using the solver function
-* Building a pivot table
+[Here (YouTube, 8.46min)](https://youtu.be/WlgWbVh8DDo)is an introduction for the absolute beginner.
 
-There is no need to go as far as [Tatsuo Horiuchi](https://www.thisiscolossal.com/2017/12/tatsuo-horiuchi-excel-artist/){target="_blank"}.
+If you want to practice your Excel skills on some super interesting economic problems you can work through the empirical problems in [CORE - Doing Economics](https://www.core-econ.org/doing-economics/index.html). Any links below labeled "CORE" link to empirical projects utilising the respective techniques.
 
-There are numerous resources available online and for free to help you learn or refresh these skills. Use an internet serach engine or search in YouTube to find help on whatever it is you want to learn. If you want more structured and complete advice you may want to follow an [online course in Excel](https://digitaldefynd.com/best-excel-tutorial-training-course-classes){target="_blank}. They are typically free or very cheap.
+As an economics student, and importantly graduate, you should be able to do the following things in a spreadsheet:
+
+* **Open/Import datasets** 
+    + [Import (or export) text (.txt or .csv) files](https://support.office.com/en-gb/article/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba) ([YouTube 9.14 mins](https://www.youtube.com/watch?v=V6AR_Hi7p5Q))
+    + Import data from web ([YouTube 10.01 mins](https://www.youtube.com/watch?v=NdUZx_yyEqY))
+    + [Import data from a database](https://support.office.com/en-us/article/tutorial-import-data-into-excel-and-create-a-data-model-4b4e5ab4-60ee-465e-8195-09ebba060bf0#__toc358186197)
+    + [Import data from a spreadsheet](https://support.office.com/en-us/article/tutorial-import-data-into-excel-and-create-a-data-model-4b4e5ab4-60ee-465e-8195-09ebba060bf0#__toc358186198)
+    + [Import data using copy and paste](https://support.office.com/en-us/article/tutorial-import-data-into-excel-and-create-a-data-model-4b4e5ab4-60ee-465e-8195-09ebba060bf0#__toc358186199)
+
+* **Deal with dates**
+    + Overview of dates and time ([YouTube 3.51 mins](https://www.youtube.com/watch?v=KlCAAQ_tQLA&feature=youtu.be))
+    + [DATE](https://support.office.com/en-gb/article/date-function-e36c0c8c-4104-49da-ab83-82328b832349) and [TIME](https://support.office.com/en-gb/article/time-function-9a5aff99-8f7d-4611-845e-747d0b8d5457) functions ([YouTube 12.19 mins mins](https://www.youtube.com/watch?v=8wqNVh2Fmu0))
+
+* **Sort and filter data**
+    + [Sort data in a range or table](https://support.office.com/en-gb/article/sort-data-in-a-range-or-table-62d0b95d-2a90-4610-a6ae-2e545c4a4654#ID0EAADAAA=Windows) ([Video 1.54 mins](https://support.office.com/en-gb/article/sort-data-in-a-range-or-table-62d0b95d-2a90-4610-a6ae-2e545c4a4654#ID0EAADAAA=Windows))
+    + [Sort data using a custom list](https://support.office.com/en-us/article/sort-data-using-a-custom-list-cba3d67a-c5cb-406f-9b14-a02205834d72?redirectSourcePath=%252fen-us%252farticle%252fdef8ff2b-681a-4fc3-9bd2-a06455c379e1&ui=en-US&rs=en-US&ad=US)
+    + [Filter data in a range or table](https://support.office.com/en-gb/article/filter-data-in-a-range-or-table-01832226-31b5-4568-8806-38c37dcc180e) ([YouTube 10.45 mins](https://www.youtube.com/watch?v=wMlTDXPEjag))
+
+* **Use formulae**
+    + [Overview of formulas](https://support.office.com/en-gb/article/overview-of-formulas-in-excel-ecfdc708-9162-49e8-b993-c311f47ca173) ([Tutorial](https://support.office.com/en-gb/article/overview-of-formulas-in-excel-ecfdc708-9162-49e8-b993-c311f47ca173), [YouTube 12.01 mins](https://www.youtube.com/watch?v=AAlKik2uxYo&feature=youtu.be))
+    + Create formula to [add, subtract, multiply or divide](https://support.office.com/en-us/article/create-a-simple-formula-in-excel-11a5f0e5-38a3-4115-85bc-f4a465f64a8a) values
+    + [Move or copy a formula](https://support.office.com/en-us/article/move-or-copy-a-formula-1f5cf825-9b07-41b1-8719-bf88b07450c6) ([YouTube 5.24 mins](https://youtu.be/iDg9s7BJ2m4))
+    + [Count how often a value occurs](https://support.office.com/en-us/article/count-how-often-a-value-occurs-aa1f3067-05c9-44e4-b141-f75bb9bb89bd) ([CORE](https://www.core-econ.org/doing-economics/book/text/01-02.html#excel-walk-through-15-using-excels-countif-function))
+    + Add numbers ([SUM function](https://support.office.com/en-us/article/sum-function-043e1c7d-7726-4e80-8f32-07b23e057f89))
+    + Add numbers based on one or more criteria, SUMIF or SUMIFS function ([YouTube 14.03 mins](https://www.youtube.com/watch?v=AZuBNWMh7VM))
+    + Find [average](https://support.office.com/en-gb/article/average-function-047bac88-d466-426c-a32b-8f33eb960cf6), [median](https://support.office.com/en-gb/article/median-function-d0916313-4753-414c-8537-ce85bdd967d2), [mode](https://support.office.com/en-gb/article/mode-function-e45192ce-9122-4980-82ed-4bdc34973120) 
+    + Find minimum and maximum values ([MIN](https://support.office.com/en-us/article/min-function-61635d12-920f-4ce2-a70f-96f202dcc152) and [MAX](https://support.office.com/en-us/article/max-function-e0012414-9ac8-4b34-9a47-73e662c08098) functions) (empirical project)
+    + AutoFill, Addressing, IF function ([YouTube 10.54 mins](https://www.youtube.com/watch?v=PVWAIcaZm_s&feature=youtu.be))
+
+* **Create graphical data representations**
+    + [Create a chart](https://support.office.com/en-us/article/create-a-chart-from-start-to-finish-0baf399e-dd61-4e18-8a73-b3fd5d5680c2#OfficeVersion=Windows) ([YouTube 14.09 mins](https://www.youtube.com/watch?v=DAU0qqh_I-A))
+    + [Available chart types](https://support.office.com/en-us/article/available-chart-types-in-office-a6187218-807e-4103-9e0a-27cdb19afb90)
+    + [Add (or remove) chart and axis titles](https://support.office.com/en-us/article/add-or-remove-titles-in-a-chart-4cf3c009-1482-4908-922a-997c32ea8250)
+    + [Pie chart](https://support.office.com/en-gb/article/add-a-pie-chart-1a5f08ae-ba40-46f2-9ed0-ff84873b7863#__toc348714905) ([YouTube 13.31 mins](https://www.youtube.com/watch?v=nuNwAu74xwY))
+    + [Line chart](https://support.office.com/en-gb/article/present-your-data-in-a-scatter-chart-or-a-line-chart-4570a80f-599a-4d6b-a155-104a9018b86e) ([YouTube 5.24 mins](https://www.youtube.com/watch?v=3o11OlLgYDo), [CORE](https://www.core-econ.org/doing-economics/book/text/01-02.html#excel-walk-through-11-drawing-a-line-chart-of-temperature-and-time), [CORE with multiple variables](https://www.core-econ.org/doing-economics/book/text/02-02.html#excel-walk-through-22-drawing-a-line-chart-with-multiple-variables))
+    + [XY scatterplot](https://support.office.com/en-gb/article/present-your-data-in-a-scatter-chart-or-a-line-chart-4570a80f-599a-4d6b-a155-104a9018b86e) ([YouTube 12.02 mins](https://www.youtube.com/watch?v=kLROcLFzH8o), [CORE](https://www.core-econ.org/doing-economics/book/text/01-02.html#excel-walk-through-17-calculating-correlation-and-drawing-a-scatterplot))
+    + [Histogram](https://trumpexcel.com/histogram-in-excel/), using the Data Analysis ToolPak ([YouTube 5.40 mins](https://www.youtube.com/watch?v=xekiDJzajYk)) ([CORE](https://www.core-econ.org/doing-economics/book/text/01-02.html#excel-walk-through-13-creating-a-frequency-table) on how to create a frequency table using the FREQUENCY function)
+
+* **Merge datasets using the vlookup command**
+    + [VLOOKUP](https://support.office.com/en-gb/article/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1) function ([YouTube 21.49 mins](https://www.youtube.com/watch?v=d3BYVQ6xIE4, [Microsoft Office video 2.37 mins](https://support.office.com/en-us/article/video-vlookup-when-and-how-to-use-it-9a86157a-5542-4148-a536-724823014785?ui=en-US&rs=en-US&ad=US))
+    + [Merge datasets using VLOOKUP](https://support.office.com/en-gb/article/how-can-i-merge-two-or-more-tables-c80a9fce-c1ab-4425-bb96-497dd906d656) ([YouTube 3.06 mins](https://www.youtube.com/watch?v=xjrZ4kwbh6w))
+    + [XLOOKUP](https://support.office.com/en-gb/article/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929) function ([YouTube 13.38 mins](https://www.youtube.com/watch?v=xDUlDhPv1RE))
+
+
+* **Optimise functions using the solver function**
+    + [Load Solver](https://support.office.com/en-us/article/load-the-solver-add-in-in-excel-612926fc-d53b-46b4-872c-e24772f078ca)
+    + What-if analysis using the [Solver](https://support.office.com/en-gb/article/define-and-solve-a-problem-by-using-solver-5d1a388f-079d-43ac-a7eb-f63e45925040) function ([YouTube 9.56 mins](https://www.youtube.com/watch?v=dRm5MEoA3OI))
+
+* **Building a pivot table**
+    + Create a [pivot table](https://support.office.com/en-us/article/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576) ([Example](https://www.excel-easy.com/data-analysis/pivot-tables.html), [YouTube 13.35 mins](https://www.youtube.com/watch?v=m0wI61ahfLc), [CORE](https://www.core-econ.org/doing-economics/book/text/03-02.html#excel-walk-through-32-making-a-pivot-table-with-more-than-two-variables))
+
 
 ## Econometrics{#Econometrics}
 
