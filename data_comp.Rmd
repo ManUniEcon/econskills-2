@@ -1,0 +1,64 @@
+---
+title: "Data Competition"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+This academic year the Economics Department of The Universty of Manchester will host the innaugural James Lincoln Data Competition.
+
+## Task
+
+With the background of climate change and required changes in behaviour, the task for this competition is to analyse the potential for short to medium term reductions of commercial air traffic. 
+
+We encourage groups to find creative ways to tackle this question. We do not expect the problem to be answered comprehensively by any one group.
+
+Your findings have to be supported by your data analysis. We anticipate that groups will have to use a variety of data sources (see below for some initial pointers).
+
+Some assumptions made for this competition:
+
+* The time horizon to consider is 5 to 10 years
+* No major new transport technology is to emerge during this time horizon
+* Both passenger and cargo air traffic can be considered although groups could also focus on one of these categories
+* The analysis could be global but groups may also choose to focus on a significant subset of airtravel (say inner US, inner EU, inner Asian or similar).
+
+## Data
+
+Groups could use sme of the following resources
+
+* [https://openflights.org/data.html](Openflight.com)
+* [https://www.faa.gov/data_research/aviation_data_statistics/](FAA.gov.uk)
+
+## Final Product
+
+Groups can choose the following submission formats:
+
+1) A maximum three minute video clip.
+2) An A0 poster
+3) A website/blog
+4) A maximum five minute podcast
+
+Each entry would have to be accompanied by a code and datafiles allowing the replication of the analysis.
+
+## Eligibility
+
+Individuals or groups of up to 4 students can participate in this competition. The only restriction being that one of the group members has to be a student at The School of Social Sciences of The University of Manchester in the academic year 2019/20. We encourage the participation of cross-disciplinary teams and of non University of Manchester students.
+
+## Important Dates
+
+* Register interest by 15 January, link to form
+* Those groups who registered an interest will be invited to a consultation with experts from SAS and the Economics Department (to be held last week of January or first week of February).
+* The final product is to be submitted to economics-department@manchester.ac.uk by Sunday 1 March 2020, 23.59 GMT.
+
+
+## Prizes
+
+
+
+## Partner
+
+This year we are very grateful to the support of our partner [https://www.sas.com/en_gb/home.html](SAS) (not the airline!), a leading provider of data analytics software and advice. 
+
+Data scientists from SAS have been involved in the design of the competition, will provide intermediate advice to groups and will form part of the judging panel.
+
