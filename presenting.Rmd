@@ -25,18 +25,22 @@ Giving a formal presentation can be a really daunting experience. Some of our un
 
 ### On giving good presentations
 
+[Communicating Economics](http://communicatingeconomics.com/) has a host of excellent resources which can help you to think, structure, plan and execute your presentation. Here are two of many:
+
+*	Bob Denham, [5 steps to presenting research](http://communicatingeconomics.com/tools/communicating-economics-using-video-film){target="_blank"}  
+*	Bob Denham, [Explain your research in 15 seconds](http://communicatingeconomics.com/resources/explain-your-economics-research-15-seconds){target="_blank"}  
+
+Other resources on presentations:
+
 *	[Economics Network](https://www.youtube.com/watch?v=7Qtk1J44oGQ){target="_blank"} (video, 2:19)  
 *	Paul Krugman (Nobel Prize winner) on [Communicating Economics](https://voxeu.org/content/communicating-economics){target="_blank"}  
 *	Bank of England, [Simple is best: enhancing trust and understanding of central banks through better communication](https://bankunderground.co.uk/2018/11/22/simply-is-best-enhancing-trust-and-understanding-of-central-banks-through-better-communications/){target="_blank"}  
 *	TED blog, [12 pieces of advice for giving talks that have impact](https://blog.ted.com/12-pieces-of-advice-for-giving-talks-that-have-impact/){target="_blank"}  
-*	Benjamin Bratton, [We need to talk about TED](https://www.theguardian.com/commentisfree/2013/dec/30/we-need-to-talk-about-ted){target="_blank"}  
-*	Bob Denham, [5 steps to presenting research](https://www.communicatingeconomics.com/research-video-five-step-outline/){target="_blank"}  
-*	Bob Denham, [Explain your research in 15 seconds](https://www.communicatingeconomics.com/fifteen-seconds-pitch/){target="_blank"}  
-*	Bob Denham and Soumaya Keyes, [From economist to journalist](https://www.communicatingeconomics.com/economist-journalist-tips-soumaya-keynes/){target="_blank"}  
+*	Benjamin Bratton, [We need to talk about TED](https://www.theguardian.com/commentisfree/2013/dec/30/we-need-to-talk-about-ted){target="_blank"} 
 *	Julian Treasure (9:58) [How to speak so that people want to listen](https://www.youtube.com/watch?v=eIho2S0ZahI){target="_blank"}  
 *	Lindsay Kolowich, [The science of a great TED talk: what makes a speech go viral](https://blog.hubspot.com/marketing/ted-talk-public-speaking-study){target="_blank"}  
 *	Paul Edwards, [How to give an academic talk](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-857-network-and-computer-security-spring-2014/projects/MIT6_857S14_proj_umic-talk.pdf){target="_blank"}  
-*	Visme,  [A Non-Designer s Guide to Creating Memorable Visual Slides](https://online.manchester.ac.uk/bbcswebdav/pid-6753519-dt-content-rid-28143952_1/xid-28143952_1){target="_blank"}
+
 
 ### Examples of good talks
 
@@ -47,13 +51,6 @@ Giving a formal presentation can be a really daunting experience. Some of our un
 *	The [IFS youtube channel](https://www.youtube.com/channel/UCvdfVF9jI_PqV5jtqateNBA){target="_blank"} has many talks ranging from 45 seconds to over an hour  
 *	[Tim Hartford](http://timharford.com/){target="_blank"} does a range of activities that communicate economics, including present the [BBC's radio show More or Less](https://www.bbc.co.uk/programmes/b006qshd/episodes/player){target="_blank"}. His TED talk [Trial, error and the God complex](https://www.ted.com/talks/tim_harford){target="_blank"} is good.
 
-
-## Visual Aids
-
-You should use visual cues when giving a talk, and not lots of %s
-
-*	Bradford (2004) [Reaching the Visual Learner: Teaching Property Through Art](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=587201){target="_blank"} The Law Teacher   
-*	Bhutoria, Jerrim and Vignoles (2018) [The financial skills of adults across the world](https://johnjerrim.files.wordpress.com/2018/03/piaac_working_report_march_2018.docx){target="_blank"}  
 
 ## Graphical representation of data
 
