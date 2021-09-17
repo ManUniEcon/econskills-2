@@ -8,16 +8,17 @@ output:
 
 ## On writing generally
 
-* Understand your task: Whether you have to answer a question in an exam or have to produce a piece of coursework you need to ensure that you understand what your task is. The UoM has produced a [list of instruction words](https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_content/external_files/instruction-words.pdf){target="_blank"} and you should ensure you understand what you are to do. This is part of a short online resource by the UoM Library which takes you through the [process of analysing your assignment task](https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_html5.html){target="_blank"} to ensure that you're clear about what you're being asked to do, giving you some useful techniques to ensure that your work remains focused on directly addressing the question at hand.  
+* Understand your task: Whether you have to answer a question in an exam or have to produce a piece of coursework you need to ensure that you understand what your task is. The UoM has produced a [list of instruction words](https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_content/external_files/instruction-words.pdf){target="_blank"} and you should ensure you understand what you are to do. This is part of a short online resource by the UoM Library which takes you through the [process of analysing your assignment task](https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_html5.html){target="_blank"} to ensure that you're clear about what you're being asked to do, giving you some useful techniques to ensure that your work remains focused on directly addressing the question at hand. This [phrasebank](https://www.phrasebank.manchester.ac.uk/) website relates to this and will help you to understand how to approach different type of questions.
 *	It helps to structure your process of researching and writing and this source could give you some ideas: [Planning and storyboards](https://cunyhumanitiesalliance.org/researchpaperfa17/2017/10/09/paper-sketch-storyboard-2/){target="_blank"}  
 * As you write your piece you need to help the reader to see a structure in your argument. One way in which you do that is by organising your thoughts in paragraphs. These are two sources which will helo you understand how to construct paragraphs: [The secrets of good paragraph writing](https://www.time4writing.com/writing-resources/paragraph-writing-secrets/){target="_blank"} and	[Basic paragraph structure](https://learn.lexiconic.net/para2.htm){target="_blank"}
 
 
 ## On writing in economics
 
-*	Schmeiser (2017) [Teaching writing in economics](https://www.tandfonline.com/doi/pdf/10.1080/00220485.2017.1353459?needAccess=true)  
-*	Neugeboren and Jacobson (2005) [Writing economics](https://writingproject.fas.harvard.edu/files/hwp/files/writingeconomics.pdf) aimed at sophmore Harvard undergrads  
-*	Dudenhefer (2009) [A guide to writing in economics](http://writing.ku.edu/sites/writing.drupal.ku.edu/files/docs/Guide_Writing_Economics.pdf), Duke University  
+* McCloskey (2019) [Economical Writing, Third Edition: Thirty-Five Rules for Clear and Persuasive Prose](https://www.amazon.co.uk/Economical-Writing-Third-Thirty-Five-Persuasive/dp/022644807X/ref=sr_1_1?dchild=1&keywords=economical+writing&qid=1631889199&qsid=261-8589742-8492227&sr=8-1&sres=022644807X%2C1577660633%2C0140445749%2C0393635325%2C041533635X%2C1603846735%2CB09GK7Z7LZ%2C0823084779%2C0399579745%2C0996061304%2C0814470548%2C0872202186%2C1107656435%2CB09GK6L8FH%2C0471445509%2C1788736869&srpt=ABIS_BOOK){target="_blank"}
+*	Schmeiser (2017) [Teaching writing in economics](https://www.tandfonline.com/doi/pdf/10.1080/00220485.2017.1353459?needAccess=true){target="_blank"}  
+*	Neugeboren and Jacobson (2005) [Writing economics](https://writingproject.fas.harvard.edu/files/hwp/files/writingeconomics.pdf){target="_blank"} aimed at sophmore Harvard undergrads  
+*	Dudenhefer (2009) [A guide to writing in economics](http://writing.ku.edu/sites/writing.drupal.ku.edu/files/docs/Guide_Writing_Economics.pdf){target="_blank"}, Duke University  
 
 ## On referencing and plagiarism
 
@@ -33,6 +34,7 @@ If you do not reference properly you can easily fall foul of University's plagia
 
 Here are things to look out of you write an essay.
 
+* A host of tips are summarised in this document produced by the University of Manchester [Economics Department](docs/CommonEssayWritingGuidelines.pdf){target="_blank"}
 * This UoM Library resource outlines a five-step technique you can use to help you to [identify your main arguments](https://www.escholar.manchester.ac.uk/learning-objects/mle/developing-argument/story_html5.html){target="_blank"}, and to organise your ideas into a coherent structure.
 
 
