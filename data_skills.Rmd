@@ -98,7 +98,10 @@ As an economics student, and importantly graduate, you should be able to do the 
 
 Econometrics is an important part of any economists toolbox and you should expect to learn a fair bit of econometrics in your programme. While you will no doubt learn about important conceptual issues (Can I use the data to establish a causal relationship?), theoretical properties (Is this estimator unbiased?) you will also have to learn to get your hands dirty. 
 
-This will imply statistical programming of sorts. The Economics Department of the University of Manchester has written a specific resource to support students with this skill, [Econometric Computing Learning Resource (ECLR)](http://eclr.humanities.manchester.ac.uk/index.php/Main_Page). This resource covers three computing languages (**EVIEWS**, **MATLAB** and **R**).
+This will imply statistical programming of sorts. The Economics Department of the University of Manchester has written a specific resource to support students with this skill, [Econometric Computing Learning Resource (ECLR)](https://datasquad.github.io/ECLR/). This resource covers some basic techniques for Economists in the **R** programming language.
+
+Python is a generalist programming software and used often for Data Science Work. There are many online resources to learn R. Here are links to materials for a workshop (February 2024) run for University of Manchester students: [Google Collab](https://colab.research.google.com/drive/1yrrfOmWZoKSOhfzeDKhFU-Ml_5PFiBSt), [Jupyter Notebook](https://livemanchesterac-my.sharepoint.com/:u:/g/personal/ralf_becker_manchester_ac_uk/ERZuTTamacNCoBhJ7KHvtjYB2VJAL5t5JXgSyo5Mgbmg9Q?e=PKUhwh) for use in VisualStudio.
+
 
 Another popular statistical language in Economics is **STATA** and the [Stata Corporation](https://www.stata.com/links/resources-for-learning-stata/) provides a list of useful STATA tutorials.
 
