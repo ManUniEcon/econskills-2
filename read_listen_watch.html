@@ -13,8 +13,8 @@
 
 <title>Read, Listen &amp; Watch</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -60,6 +60,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -80,6 +81,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -137,11 +141,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -170,8 +178,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -232,7 +233,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -284,53 +285,157 @@ $(document).ready(function () {
 
 <div id="reading" class="section level2">
 <h2>Things to read and listen to for economics students</h2>
-<p>There is a lot oof topical reading in economics at any time. However, these days, when it is obvious that not all salvation llies in free markets, economic thinking is more important than ever. This is briliantly demonstrated by <a href="https://coronavirusandtheeconomy.com/">coronavirusandtheeconomy.com/</a>, a collective initiative by the economic research community to answer questions from policy-makers and the public about the economics of the Covid-19 crisis and the recovery. A new article is published every day.</p>
+<p>There is a lot oof topical reading in economics at any time. However,
+these days, when it is obvious that not all salvation llies in free
+markets, economic thinking is more important than ever. This is
+briliantly demonstrated by <a
+href="https://coronavirusandtheeconomy.com/">coronavirusandtheeconomy.com/</a>,
+a collective initiative by the economic research community to answer
+questions from policy-makers and the public about the economics of the
+Covid-19 crisis and the recovery. A new article is published every
+day.</p>
 <p>Interesting economics blogs and podcasts:</p>
 <ul>
-<li><a href="http://www.econtalk.org/" target="_blank">Econtalk</a>, podcasts on a range of economics issues<br />
+<li><a href="http://www.econtalk.org/" target="_blank">Econtalk</a>,
+podcasts on a range of economics issues<br />
 </li>
-<li><a href="https://fivethirtyeight.com/economics/" target="_blank">FiveThityEight</a>, Nate Silver’s data-based news service<br />
+<li><a href="https://fivethirtyeight.com/economics/"
+target="_blank">FiveThityEight</a>, Nate Silver’s data-based news
+service<br />
 </li>
-<li><a href="http://freakonomics.com/" target="_blank">Freakonomics</a>, blogs and podcasts following the pattern set by Steven D. Levitt and Stephen J. Dubner’s successful Freakonomics book series<br />
+<li><a href="http://freakonomics.com/" target="_blank">Freakonomics</a>,
+blogs and podcasts following the pattern set by Steven D. Levitt and
+Stephen J. Dubner’s successful Freakonomics book series<br />
 </li>
-<li><a href="http://planetmoney.com/" target="_blank">Planet Money</a>, this is an Economics programme by National Public radio<br />
+<li><a href="http://planetmoney.com/" target="_blank">Planet Money</a>,
+this is an Economics programme by National Public radio<br />
 </li>
-<li><a href="http://timharford.com/" target="_blank">Tim Harford</a> is an Economist at the Financial Times and writes about economics of general interest and also presents the inspirational BBC Radio 4 <a href="https://www.bbc.co.uk/programmes/p02nrss1" target="_blank">More or Less</a> programme.</li>
+<li><a href="http://timharford.com/" target="_blank">Tim Harford</a> is
+an Economist at the Financial Times and writes about economics of
+general interest and also presents the inspirational BBC Radio 4 <a
+href="https://www.bbc.co.uk/programmes/p02nrss1" target="_blank">More or
+Less</a> programme.</li>
 </ul>
 <p>Interesting blogs:</p>
 <ul>
-<li><a href="http://www.enlightenmenteconomics.com/blog/" target="_blank">Diane Coyle</a>, formerly of Manchester, now at The University of Cambridge. She reviews economics books and writes on the digital economy and its measurement.<br />
+<li><a href="http://www.enlightenmenteconomics.com/blog/"
+target="_blank">Diane Coyle</a>, formerly of Manchester, now at The
+University of Cambridge. She reviews economics books and writes on the
+digital economy and its measurement.<br />
 </li>
-<li><a href="https://johnhcochrane.blogspot.com/" target="_blank">John H. Cochrane</a>, “news, views, and commentary, from a humorous free-market point of view”<br />
+<li><a href="https://johnhcochrane.blogspot.com/" target="_blank">John
+H. Cochrane</a>, “news, views, and commentary, from a humorous
+free-market point of view”<br />
 </li>
-<li><a href="https://mainlymacro.blogspot.com/" target="_blank">Simon Wren-Lewis</a>, left of centre macroeconomist</li>
-<li><a href="https://microeconomicinsights.org/" target="_blank">Microeconomic Insights</a>, a blog which presents current high quality research for public consumption<br />
+<li><a href="https://mainlymacro.blogspot.com/" target="_blank">Simon
+Wren-Lewis</a>, left of centre macroeconomist</li>
+<li><a href="https://microeconomicinsights.org/"
+target="_blank">Microeconomic Insights</a>, a blog which presents
+current high quality research for public consumption<br />
 </li>
-<li><a href="https://marginalrevolution.com/" target="_blank">Marginal Revolution</a></li>
-<li><a href="http://noahpinionblog.blogspot.com/" target="_blank">Noah Smith</a>, Economist at Bloomberg</li>
-<li><a href="https://nofuturepast.wordpress.com/" target="_blank">Nuno Palma</a>, Economist at University of Manchester blogging on all things Economic History</li>
+<li><a href="https://marginalrevolution.com/" target="_blank">Marginal
+Revolution</a></li>
+<li><a href="http://noahpinionblog.blogspot.com/" target="_blank">Noah
+Smith</a>, Economist at Bloomberg</li>
+<li><a href="https://nofuturepast.wordpress.com/" target="_blank">Nuno
+Palma</a>, Economist at University of Manchester blogging on all things
+Economic History</li>
 </ul>
 <p>YouTube Channels and Videos:</p>
 <ul>
-<li><a href="https://www.youtube.com/user/ACDCLeadership" target="_blank">Jacob Clifford</a>, produces videos on textbook level micro- and macroeconomics<br />
+<li><a href="https://www.youtube.com/user/ACDCLeadership"
+target="_blank">Jacob Clifford</a>, produces videos on textbook level
+micro- and macroeconomics<br />
 </li>
-<li><a href="https://www.youtube.com/channel/UCpsroJwsVKQvRH3ZqdvRetQ" target="_blank">One Minute Economics</a>, one minute animated clips on a range of economics issues<br />
+<li><a href="https://www.youtube.com/channel/UCpsroJwsVKQvRH3ZqdvRetQ"
+target="_blank">One Minute Economics</a>, one minute animated clips on a
+range of economics issues<br />
 </li>
-<li><a href="https://www.youtube.com/user/TEDEducation" target="_blank">Ted Ed</a>, TED talks on a range of interesting isssues</li>
+<li><a href="https://www.youtube.com/user/TEDEducation"
+target="_blank">Ted Ed</a>, TED talks on a range of interesting
+isssues</li>
 </ul>
-<p>Further links to to some Economics themed distractions are provided by the <a href="http://www.studyingeconomics.ac.uk/the-little-bits-we-like/" target="_blank">Economics Network</a>.</p>
+<p>Further links to to some Economics themed distractions are provided
+by the <a
+href="http://www.studyingeconomics.ac.uk/the-little-bits-we-like/"
+target="_blank">Economics Network</a>.</p>
 <p>Twitter:</p>
-<p>Under the <a href="https://twitter.com/search?q=%23EconTwitter&amp;src=typd" target="_blank">#EconTwitter</a> you can find topical discussions on economic topics in the twittersphere.</p>
+<p>Under the <a
+href="https://twitter.com/search?q=%23EconTwitter&amp;src=typd"
+target="_blank">#EconTwitter</a> you can find topical discussions on
+economic topics in the twittersphere.</p>
 <p>Books:</p>
 <p>Here are some book suggestions by colleagues in the Department</p>
 <ul>
-<li><a href="https://www.amazon.co.uk/Mis-Behaviour-Markets-Fractal-Reward/dp/1846682622">The (Mis)Behavior of Markets</a> (by Benoit Mandelbrot) - a non-standard view on finance theory, nicely illustrating why theories fail, and why it is sometimes crucial to look at the problem from a different and creative perspective. It is also a very accessible introduction to the fractal theory, full of fun and interesting examples. Recommended by <a href="https://www.research.manchester.ac.uk/portal/ekaterina.kazak.html">Ekaterina Kazak</a></li>
-<li>Simon Kuper &amp; Stefan Szymanski, <a href="https://www.amazon.co.uk/Soccernomics-England-Germany-France-Finally/dp/000823664X/ref=sr_1_1?dchild=1&amp;keywords=Soccernomics&amp;qid=1599205282&amp;s=books&amp;sr=1-1">Soccernomics</a> - Originally published under the crowd pleasing title “Why England Lose” this book looks at a range of issues relating to the use of economics in football, using real world data to illustrate some quite startling findings, such as who was the most efficient Premier League manager. Reading this book might make you look again at the way football clubs behave, particularly as we head into what is likely to be a turbulent summer for many clubs. Recommended by Robert O’Neill.</li>
-<li>Terry Pratchett <a href="https://www.amazon.co.uk/Making-Money-Discworld-Novel-Novels/dp/0552167703">Making Money</a> This one is not a formal Economics book but is a comic novel which contains a lot of economics as part of the backdrop, for example in a world without electricity the central bank relies on a hydraulic computer to model the economy, an odd idea taken from real life economics (see <a href="https://en.wikipedia.org/wiki/MONIAC" class="uri">https://en.wikipedia.org/wiki/MONIAC</a>). As we follow Moist von Lipwig on his task to take over the central bank on Ankh Morpork you might recognise more economics than you realised! Recommended by Robert O’Neill.</li>
-<li><a href="https://g.co/kgs/VZYbhB">Saving the Media: Capitalism, Crowdfunding, and Democracy</a> by Julia Cagé, recommended by <a href="https://sites.google.com/view/carloreggianieconomics/">Carlo Reggiano</a>. It is a short book (which suits me, as I am a very slow and easily distracted reader - many students may also be?). The first part documents with a lot of data trends in the media industry in the digital age, with focus on the production of news and the role of journalists. It then looks at the implications that the of the “media crisis” for the sector and for the democratic system more in general. Finally, the book tries to propose a new sustainable model (haven’t got there, but I suspect this part may be the least convincing).</li>
-<li><a href="https://www.amazon.co.uk/Paris-London-Penguin-Modern-Classics/dp/0141184388/ref=sr_1_1?dchild=1&amp;keywords=Down+and+Out+in+Paris+and+London&amp;qid=1599205736&amp;s=books&amp;sr=1-1">Down and Out in Paris and London</a> by George Orwell, recommended by <a href="https://www.research.manchester.ac.uk/portal/simon.peters.html">Simon Peters</a>. I was advised by an old employer to read the works of George Orwell if I wanted to improve my written English style. This one is relevant because it documents elements of trying to get piece-work in the service industry, and a spell I think on the consumptive ward of a Paris hospital, both resonant of things going on presently.</li>
-<li><a href="https://www.amazon.co.uk/Frock-Coated-Communist-Revolutionary-Friedrich-Engels/dp/0141021403/ref=sr_1_1?dchild=1&amp;keywords=The+Frock+Coated+Communist&amp;qid=1599205795&amp;s=books&amp;sr=1-1">The Frock Coated Communist</a> by Tristan Hunt, recommended by <a href="https://www.research.manchester.ac.uk/portal/simon.peters.html">Simon Peters</a>. Biography of Frederick Engels, including stuff on his time at Manchester, and of course, his work with Marx, so its a background context for political economy. Engels used to wander from the Albert Club (for German emigres), now the Graphene Centre, via the postbox outside the student union (still there near the crossing) where he posted money to Marx. So there is also some local interest beyond him and Marx working in Chethams Library.</li>
-<li><a href="https://www.amazon.co.uk/Taking-Chances-Probability-John-Haigh/dp/0198526636/ref=sr_1_1?dchild=1&amp;keywords=Taking+Chances+winning+with+probability&amp;qid=1599205874&amp;s=books&amp;sr=1-1">Taking Chances winning with probability</a> by John Haigh, recommended by <a href="https://www.research.manchester.ac.uk/portal/simon.peters.html">Simon Peters</a>. This is a collection of applications of probability to games, including some you may have played during lockdown. It is a bit old now (1999), relatively speaking, but it has some of the classics, but some omissions (no Monty Hall if I recall). Should be accessible to anyone who has done either of the statistics units.</li>
+<li><a
+href="https://www.amazon.co.uk/Mis-Behaviour-Markets-Fractal-Reward/dp/1846682622">The
+(Mis)Behavior of Markets</a> (by Benoit Mandelbrot) - a non-standard
+view on finance theory, nicely illustrating why theories fail, and why
+it is sometimes crucial to look at the problem from a different and
+creative perspective. It is also a very accessible introduction to the
+fractal theory, full of fun and interesting examples. Recommended by <a
+href="https://www.research.manchester.ac.uk/portal/ekaterina.kazak.html">Ekaterina
+Kazak</a></li>
+<li>Simon Kuper &amp; Stefan Szymanski, <a
+href="https://www.amazon.co.uk/Soccernomics-England-Germany-France-Finally/dp/000823664X/ref=sr_1_1?dchild=1&amp;keywords=Soccernomics&amp;qid=1599205282&amp;s=books&amp;sr=1-1">Soccernomics</a>
+- Originally published under the crowd pleasing title “Why England Lose”
+this book looks at a range of issues relating to the use of economics in
+football, using real world data to illustrate some quite startling
+findings, such as who was the most efficient Premier League manager.
+Reading this book might make you look again at the way football clubs
+behave, particularly as we head into what is likely to be a turbulent
+summer for many clubs. Recommended by Robert O’Neill.</li>
+<li>Terry Pratchett <a
+href="https://www.amazon.co.uk/Making-Money-Discworld-Novel-Novels/dp/0552167703">Making
+Money</a> This one is not a formal Economics book but is a comic novel
+which contains a lot of economics as part of the backdrop, for example
+in a world without electricity the central bank relies on a hydraulic
+computer to model the economy, an odd idea taken from real life
+economics (see <a href="https://en.wikipedia.org/wiki/MONIAC"
+class="uri">https://en.wikipedia.org/wiki/MONIAC</a>). As we follow
+Moist von Lipwig on his task to take over the central bank on Ankh
+Morpork you might recognise more economics than you realised!
+Recommended by Robert O’Neill.</li>
+<li><a href="https://g.co/kgs/VZYbhB">Saving the Media: Capitalism,
+Crowdfunding, and Democracy</a> by Julia Cagé, recommended by <a
+href="https://sites.google.com/view/carloreggianieconomics/">Carlo
+Reggiano</a>. It is a short book (which suits me, as I am a very slow
+and easily distracted reader - many students may also be?). The first
+part documents with a lot of data trends in the media industry in the
+digital age, with focus on the production of news and the role of
+journalists. It then looks at the implications that the of the “media
+crisis” for the sector and for the democratic system more in general.
+Finally, the book tries to propose a new sustainable model (haven’t got
+there, but I suspect this part may be the least convincing).</li>
+<li><a
+href="https://www.amazon.co.uk/Paris-London-Penguin-Modern-Classics/dp/0141184388/ref=sr_1_1?dchild=1&amp;keywords=Down+and+Out+in+Paris+and+London&amp;qid=1599205736&amp;s=books&amp;sr=1-1">Down
+and Out in Paris and London</a> by George Orwell, recommended by <a
+href="https://www.research.manchester.ac.uk/portal/simon.peters.html">Simon
+Peters</a>. I was advised by an old employer to read the works of George
+Orwell if I wanted to improve my written English style. This one is
+relevant because it documents elements of trying to get piece-work in
+the service industry, and a spell I think on the consumptive ward of a
+Paris hospital, both resonant of things going on presently.</li>
+<li><a
+href="https://www.amazon.co.uk/Frock-Coated-Communist-Revolutionary-Friedrich-Engels/dp/0141021403/ref=sr_1_1?dchild=1&amp;keywords=The+Frock+Coated+Communist&amp;qid=1599205795&amp;s=books&amp;sr=1-1">The
+Frock Coated Communist</a> by Tristan Hunt, recommended by <a
+href="https://www.research.manchester.ac.uk/portal/simon.peters.html">Simon
+Peters</a>. Biography of Frederick Engels, including stuff on his time
+at Manchester, and of course, his work with Marx, so its a background
+context for political economy. Engels used to wander from the Albert
+Club (for German emigres), now the Graphene Centre, via the postbox
+outside the student union (still there near the crossing) where he
+posted money to Marx. So there is also some local interest beyond him
+and Marx working in Chethams Library.</li>
+<li><a
+href="https://www.amazon.co.uk/Taking-Chances-Probability-John-Haigh/dp/0198526636/ref=sr_1_1?dchild=1&amp;keywords=Taking+Chances+winning+with+probability&amp;qid=1599205874&amp;s=books&amp;sr=1-1">Taking
+Chances winning with probability</a> by John Haigh, recommended by <a
+href="https://www.research.manchester.ac.uk/portal/simon.peters.html">Simon
+Peters</a>. This is a collection of applications of probability to
+games, including some you may have played during lockdown. It is a bit
+old now (1999), relatively speaking, but it has some of the classics,
+but some omissions (no Monty Hall if I recall). Should be accessible to
+anyone who has done either of the statistics units.</li>
 </ul>
 </div>
 
