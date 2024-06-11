@@ -13,8 +13,8 @@
 
 <title>Writing</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -63,6 +63,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +181,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -295,12 +296,12 @@ div.tocify {
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row">
-<div class="col-sm-12 col-md-4 col-lg-3">
+<div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -308,7 +309,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -361,73 +362,168 @@ div.tocify {
 <div id="on-writing-generally" class="section level2">
 <h2>On writing generally</h2>
 <ul>
-<li>Understand your task: Whether you have to answer a question in an exam or have to produce a piece of coursework you need to ensure that you understand what your task is. The UoM has produced a <a href="https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_content/external_files/instruction-words.pdf" target="_blank">list of instruction words</a> and you should ensure you understand what you are to do. This is part of a short online resource by the UoM Library which takes you through the <a href="https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_html5.html" target="_blank">process of analysing your assignment task</a> to ensure that you’re clear about what you’re being asked to do, giving you some useful techniques to ensure that your work remains focused on directly addressing the question at hand. This <a href="https://www.phrasebank.manchester.ac.uk/">phrasebank</a> website relates to this and will help you to understand how to approach different type of questions.</li>
-<li>It helps to structure your process of researching and writing and this source could give you some ideas: <a href="https://cunyhumanitiesalliance.org/researchpaperfa17/2017/10/09/paper-sketch-storyboard-2/" target="_blank">Planning and storyboards</a><br />
+<li>Understand your task: Whether you have to answer a question in an
+exam or have to produce a piece of coursework you need to ensure that
+you understand what your task is. The UoM has produced a <a
+href="https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_content/external_files/instruction-words.pdf"
+target="_blank">list of instruction words</a> and you should ensure you
+understand what you are to do. This is part of a short online resource
+by the UoM Library which takes you through the <a
+href="https://www.escholar.manchester.ac.uk/learning-objects/mle/understanding-task/story_html5.html"
+target="_blank">process of analysing your assignment task</a> to ensure
+that you’re clear about what you’re being asked to do, giving you some
+useful techniques to ensure that your work remains focused on directly
+addressing the question at hand. This <a
+href="https://www.phrasebank.manchester.ac.uk/">phrasebank</a> website
+relates to this and will help you to understand how to approach
+different type of questions.</li>
+<li>It helps to structure your process of researching and writing and
+this source could give you some ideas: <a
+href="https://cunyhumanitiesalliance.org/researchpaperfa17/2017/10/09/paper-sketch-storyboard-2/"
+target="_blank">Planning and storyboards</a><br />
 </li>
-<li>As you write your piece you need to help the reader to see a structure in your argument. One way in which you do that is by organising your thoughts in paragraphs. These are two sources which will helo you understand how to construct paragraphs: <a href="https://www.time4writing.com/writing-resources/paragraph-writing-secrets/" target="_blank">The secrets of good paragraph writing</a> and <a href="https://learn.lexiconic.net/para2.htm" target="_blank">Basic paragraph structure</a></li>
+<li>As you write your piece you need to help the reader to see a
+structure in your argument. One way in which you do that is by
+organising your thoughts in paragraphs. These are two sources which will
+helo you understand how to construct paragraphs: <a
+href="https://www.time4writing.com/writing-resources/paragraph-writing-secrets/"
+target="_blank">The secrets of good paragraph writing</a> and <a
+href="https://learn.lexiconic.net/para2.htm" target="_blank">Basic
+paragraph structure</a></li>
 </ul>
 </div>
 <div id="on-writing-in-economics" class="section level2">
 <h2>On writing in economics</h2>
 <ul>
-<li>McCloskey (2019) <a href="https://www.amazon.co.uk/Economical-Writing-Third-Thirty-Five-Persuasive/dp/022644807X/ref=sr_1_1?dchild=1&amp;keywords=economical+writing&amp;qid=1631889199&amp;qsid=261-8589742-8492227&amp;sr=8-1&amp;sres=022644807X%2C1577660633%2C0140445749%2C0393635325%2C041533635X%2C1603846735%2CB09GK7Z7LZ%2C0823084779%2C0399579745%2C0996061304%2C0814470548%2C0872202186%2C1107656435%2CB09GK6L8FH%2C0471445509%2C1788736869&amp;srpt=ABIS_BOOK" target="_blank">Economical Writing, Third Edition: Thirty-Five Rules for Clear and Persuasive Prose</a></li>
-<li>Schmeiser (2017) <a href="https://www.tandfonline.com/doi/pdf/10.1080/00220485.2017.1353459?needAccess=true" target="_blank">Teaching writing in economics</a><br />
+<li>McCloskey (2019) <a
+href="https://www.amazon.co.uk/Economical-Writing-Third-Thirty-Five-Persuasive/dp/022644807X/ref=sr_1_1?dchild=1&amp;keywords=economical+writing&amp;qid=1631889199&amp;qsid=261-8589742-8492227&amp;sr=8-1&amp;sres=022644807X%2C1577660633%2C0140445749%2C0393635325%2C041533635X%2C1603846735%2CB09GK7Z7LZ%2C0823084779%2C0399579745%2C0996061304%2C0814470548%2C0872202186%2C1107656435%2CB09GK6L8FH%2C0471445509%2C1788736869&amp;srpt=ABIS_BOOK"
+target="_blank">Economical Writing, Third Edition: Thirty-Five Rules for
+Clear and Persuasive Prose</a></li>
+<li>Schmeiser (2017) <a
+href="https://www.tandfonline.com/doi/pdf/10.1080/00220485.2017.1353459?needAccess=true"
+target="_blank">Teaching writing in economics</a><br />
 </li>
-<li>Neugeboren and Jacobson (2005) <a href="https://writingproject.fas.harvard.edu/files/hwp/files/writingeconomics.pdf" target="_blank">Writing economics</a> aimed at sophmore Harvard undergrads<br />
+<li>Neugeboren and Jacobson (2005) <a
+href="https://writingproject.fas.harvard.edu/files/hwp/files/writingeconomics.pdf"
+target="_blank">Writing economics</a> aimed at sophmore Harvard
+undergrads<br />
 </li>
-<li>Dudenhefer (2009) <a href="http://writing.ku.edu/sites/writing.drupal.ku.edu/files/docs/Guide_Writing_Economics.pdf" target="_blank">A guide to writing in economics</a>, Duke University</li>
+<li>Dudenhefer (2009) <a
+href="http://writing.ku.edu/sites/writing.drupal.ku.edu/files/docs/Guide_Writing_Economics.pdf"
+target="_blank">A guide to writing in economics</a>, Duke
+University</li>
 </ul>
 </div>
 <div id="on-referencing-and-plagiarism" class="section level2">
 <h2>On referencing and plagiarism</h2>
-<p>This <a href="https://www.escholar.manchester.ac.uk/learning-objects/mle/introducing-referencing/story_html5.html">online resource</a> explores the principles behind referencing, highlighting why it is good academic practice. It outlines when and how you need to reference, and how to read a reference when following up a source listed on a reading list or bibliography. (UoM, Learning Essentials)</p>
-<p>Here we use the Harvard referencing style and all your referencing should adhere to this <a href="http://subjects.library.manchester.ac.uk/referencing/referencing-harvard">guidance</a>. (UoM)</p>
-<p>The University of Manchester provides a range of <a href="http://subjects.library.manchester.ac.uk/referencing">resources for referencing</a>.</p>
-<p>If you do not reference properly you can easily fall foul of University’s plagiarism rules. It is vital that you understand the regulations. You may want to go through this short online resource produced by the UoM Library to <a href="https://www.escholar.manchester.ac.uk/learning-objects/mle/avoiding-plagiarism/story_html5.html" target="_blank">undestand what palgiarism is and techniques to avoid any problems</a>.</p>
+<p>This <a
+href="https://www.escholar.manchester.ac.uk/learning-objects/mle/introducing-referencing/story_html5.html">online
+resource</a> explores the principles behind referencing, highlighting
+why it is good academic practice. It outlines when and how you need to
+reference, and how to read a reference when following up a source listed
+on a reading list or bibliography. (UoM, Learning Essentials)</p>
+<p>Here we use the Harvard referencing style and all your referencing
+should adhere to this <a
+href="http://subjects.library.manchester.ac.uk/referencing/referencing-harvard">guidance</a>.
+(UoM)</p>
+<p>The University of Manchester provides a range of <a
+href="http://subjects.library.manchester.ac.uk/referencing">resources
+for referencing</a>.</p>
+<p>If you do not reference properly you can easily fall foul of
+University’s plagiarism rules. It is vital that you understand the
+regulations. You may want to go through this short online resource
+produced by the UoM Library to <a
+href="https://www.escholar.manchester.ac.uk/learning-objects/mle/avoiding-plagiarism/story_html5.html"
+target="_blank">undestand what palgiarism is and techniques to avoid any
+problems</a>.</p>
 </div>
 <div id="on-writing-an-essay" class="section level2">
 <h2>On writing an essay</h2>
 <p>Here are things to look out of you write an essay.</p>
 <ul>
-<li>A host of tips are summarised in this document produced by the University of Manchester <a href="docs/CommonEssayWritingGuidelines.pdf" target="_blank">Economics Department</a></li>
-<li>This UoM Library resource outlines a five-step technique you can use to help you to <a href="https://www.escholar.manchester.ac.uk/learning-objects/mle/developing-argument/story_html5.html" target="_blank">identify your main arguments</a>, and to organise your ideas into a coherent structure.</li>
+<li>A host of tips are summarised in this document produced by the
+University of Manchester <a href="docs/CommonEssayWritingGuidelines.pdf"
+target="_blank">Economics Department</a></li>
+<li>This UoM Library resource outlines a five-step technique you can use
+to help you to <a
+href="https://www.escholar.manchester.ac.uk/learning-objects/mle/developing-argument/story_html5.html"
+target="_blank">identify your main arguments</a>, and to organise your
+ideas into a coherent structure.</li>
 </ul>
 </div>
 <div id="on-writing-a-policy-brief" class="section level2">
 <h2>On writing a policy brief</h2>
 <ul>
-<li><a href="https://www.economicshelp.org/help/tips-economic-essays/" target="_blank">Tips for writing economics essays</a>, Economics.help<br />
+<li><a href="https://www.economicshelp.org/help/tips-economic-essays/"
+target="_blank">Tips for writing economics essays</a>,
+Economics.help<br />
 </li>
-<li><a href="https://www.parliament.uk/mps-lords-and-offices/offices/bicameral/post/about-post/writing-a-policy-brief/" target="_blank">How to write a policy brief</a>, UK Parliament<br />
+<li><a
+href="https://www.parliament.uk/mps-lords-and-offices/offices/bicameral/post/about-post/writing-a-policy-brief/"
+target="_blank">How to write a policy brief</a>, UK Parliament<br />
 </li>
-<li><a href="https://www.wikihow.com/Write-a-Policy-Brief" target="_blank">How to write a policy brief</a>, WikiHow<br />
+<li><a href="https://www.wikihow.com/Write-a-Policy-Brief"
+target="_blank">How to write a policy brief</a>, WikiHow<br />
 </li>
-<li><a href="https://www.pep-net.org/sites/pep-net.org/files/typo3doc/pdf/CBMS_country_proj_profiles/Philippines/CBMS_forms/Guidelines_for_Writing_a_Policy_Brief.pdf" target="_blank">Guidelines for writing a policy brief</a>, Community-Based Monitoring System<br />
+<li><a
+href="https://www.pep-net.org/sites/pep-net.org/files/typo3doc/pdf/CBMS_country_proj_profiles/Philippines/CBMS_forms/Guidelines_for_Writing_a_Policy_Brief.pdf"
+target="_blank">Guidelines for writing a policy brief</a>,
+Community-Based Monitoring System<br />
 </li>
-<li><a href="http://blogs.lshtm.ac.uk/griphealth/files/2017/01/Policy-briefs-guide_2015.pdf" target="_blank">Policy briefs: a guide to writing policy briefs for research uptake</a>, Resilient and Responsive Health Systems<br />
+<li><a
+href="http://blogs.lshtm.ac.uk/griphealth/files/2017/01/Policy-briefs-guide_2015.pdf"
+target="_blank">Policy briefs: a guide to writing policy briefs for
+research uptake</a>, Resilient and Responsive Health Systems<br />
 </li>
-<li><a href="https://www.idrc.ca/sites/default/files/idrcpolicybrieftoolkit.pdf" target="_blank">How to write a policy brief</a>, International Development Research Centre<br />
+<li><a
+href="https://www.idrc.ca/sites/default/files/idrcpolicybrieftoolkit.pdf"
+target="_blank">How to write a policy brief</a>, International
+Development Research Centre<br />
 </li>
-<li><a href="https://www.researchtoaction.org/wp-content/uploads/2014/10/PBWeekLauraFCfinal.pdf" target="_blank">How to plan, write and communicate an effective policy brief</a>, Research to Action<br />
+<li><a
+href="https://www.researchtoaction.org/wp-content/uploads/2014/10/PBWeekLauraFCfinal.pdf"
+target="_blank">How to plan, write and communicate an effective policy
+brief</a>, Research to Action<br />
 </li>
-<li><a href="https://writingcenter.unc.edu/policy-briefs/">Writing a policy brief</a>, University of North Carolina at Chapel Hill<br />
+<li><a href="https://writingcenter.unc.edu/policy-briefs/">Writing a
+policy brief</a>, University of North Carolina at Chapel Hill<br />
 </li>
-<li><a href="http://www.fao.org/3/i2195e/i2195e00.htm" target="_blank">Food Security Communications Toolkit</a>, FAO<br />
+<li><a href="http://www.fao.org/3/i2195e/i2195e00.htm"
+target="_blank">Food Security Communications Toolkit</a>, FAO<br />
 </li>
-<li><a href="http://www.fao.org/3/i2195e/i2195e03.pdf" target="_blank">Writing policy briefs</a>, FAO</li>
+<li><a href="http://www.fao.org/3/i2195e/i2195e03.pdf"
+target="_blank">Writing policy briefs</a>, FAO</li>
 </ul>
 </div>
 <div id="dissertation" class="section level2">
 <h2>Dissertation</h2>
-<p>A dissertation is a substantial piece of work and requires careful planning from finding a topic to the final <a href="#Proofreading">proof read</a>. This <a href="http://www.studyingeconomics.ac.uk/dissertation/" target="_blank">site by the Economics Network</a> guides you through many of the important steps.</p>
+<p>A dissertation is a substantial piece of work and requires careful
+planning from finding a topic to the final <a href="#Proofreading">proof
+read</a>. This <a
+href="http://www.studyingeconomics.ac.uk/dissertation/"
+target="_blank">site by the Economics Network</a> guides you through
+many of the important steps.</p>
 </div>
 <div id="Proofreading" class="section level2">
 <h2>Proofreading</h2>
-<p>You finished writing your work? Think again. This resource by the UoM Library explores three vital elements to proofreading your work - flow, clarity and accuracy - and gives you a chance to learn about and apply some techniques to <a href="https://www.escholar.manchester.ac.uk/learning-objects/mle/proofreading/story_html5.html" target="_blank">ensure that you check your work properly</a>.</p>
+<p>You finished writing your work? Think again. This resource by the UoM
+Library explores three vital elements to proofreading your work - flow,
+clarity and accuracy - and gives you a chance to learn about and apply
+some techniques to <a
+href="https://www.escholar.manchester.ac.uk/learning-objects/mle/proofreading/story_html5.html"
+target="_blank">ensure that you check your work properly</a>.</p>
 </div>
 <div id="how-will-your-work-be-assessed" class="section level2">
 <h2>How will your work be assessed?</h2>
-<p>Here at The University of Manchester’s Economics Department we have bespoke assessment criteria (<a href="docs/EconomicsUndergraduateAssessmentCriteria.pdf" target="_blank">for undergraduate students</a> and for <a href="docs/EconomicsPostgraduateAssessmentCriteria.pdf" target="_blank">Masters students</a>). These may sound rather generic at the writing stage, but when you read through your or someone else’s work you should practice finding elements of the respective grade categories in the work.</p>
+<p>Here at The University of Manchester’s Economics Department we have
+bespoke assessment criteria (<a
+href="docs/EconomicsUndergraduateAssessmentCriteria.pdf"
+target="_blank">for undergraduate students</a> and for <a
+href="docs/EconomicsPostgraduateAssessmentCriteria.pdf"
+target="_blank">Masters students</a>). These may sound rather generic at
+the writing stage, but when you read through your or someone else’s work
+you should practice finding elements of the respective grade categories
+in the work.</p>
 </div>
 
 
@@ -468,6 +564,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

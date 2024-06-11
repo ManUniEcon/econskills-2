@@ -13,8 +13,8 @@
 
 <title>Presenting</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -63,6 +63,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +181,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -295,12 +296,12 @@ div.tocify {
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row">
-<div class="col-sm-12 col-md-4 col-lg-3">
+<div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -308,7 +309,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -358,71 +359,143 @@ div.tocify {
 </div>
 
 
-<p>During your degree and even more so afterwards in your workplace you will often be asked to verbally present your thoughts or your work. This can happen in very different environments, a tutorial in which you make a contribution, your study group in which you revise a topic, or a formal presentation where your thoughts are supported by a set of slides.</p>
+<p>During your degree and even more so afterwards in your workplace you
+will often be asked to verbally present your thoughts or your work. This
+can happen in very different environments, a tutorial in which you make
+a contribution, your study group in which you revise a topic, or a
+formal presentation where your thoughts are supported by a set of
+slides.</p>
 <div id="in-group-study" class="section level2">
 <h2>In Group Study</h2>
-<p>This is possibly the most common and also the most relaxed environment in which you will be given the oppportunity to verbally express what you have understood and learned. This are invaluable opportunities to practice your verbal skills.</p>
-<p>In case the language of study (here English) is not your mother tongue, working in groups is a great opportunity to practice your language skills. If at all possible you should have discussions on the topic in English. After all you will be asked to use English in your assessments. Even if it is difficult at first, it is a great way to learn and once you leave University any future employer will expect that you have great English skills.</p>
+<p>This is possibly the most common and also the most relaxed
+environment in which you will be given the oppportunity to verbally
+express what you have understood and learned. This are invaluable
+opportunities to practice your verbal skills.</p>
+<p>In case the language of study (here English) is not your mother
+tongue, working in groups is a great opportunity to practice your
+language skills. If at all possible you should have discussions on the
+topic in English. After all you will be asked to use English in your
+assessments. Even if it is difficult at first, it is a great way to
+learn and once you leave University any future employer will expect that
+you have great English skills.</p>
 </div>
 <div id="in-tutorials" class="section level2">
 <h2>In Tutorials</h2>
-<p>Tutorials are small group meetings. In many of these you will be given the opportunity to make contributions. You should ensure that you use as many of these opportunities as you can. The feedback you will receive on your contributions (from fellow students or the tutor) can significantly contribute t your learning.</p>
+<p>Tutorials are small group meetings. In many of these you will be
+given the opportunity to make contributions. You should ensure that you
+use as many of these opportunities as you can. The feedback you will
+receive on your contributions (from fellow students or the tutor) can
+significantly contribute t your learning.</p>
 </div>
 <div id="presentations" class="section level2">
 <h2>Presentations</h2>
-<p>Giving a formal presentation can be a really daunting experience. Some of our units ask you to make formal presentations such that you can start making relevant experiences for your later worklife.</p>
+<p>Giving a formal presentation can be a really daunting experience.
+Some of our units ask you to make formal presentations such that you can
+start making relevant experiences for your later worklife.</p>
 <div id="on-giving-good-presentations" class="section level3">
 <h3>On giving good presentations</h3>
-<p><a href="http://communicatingeconomics.com/">Communicating Economics</a> has a host of excellent resources which can help you to think, structure, plan and execute your presentation. Here are two of many:</p>
+<p><a href="http://communicatingeconomics.com/">Communicating
+Economics</a> has a host of excellent resources which can help you to
+think, structure, plan and execute your presentation. Here are two of
+many:</p>
 <ul>
-<li>Bob Denham, <a href="http://communicatingeconomics.com/tools/communicating-economics-using-video-film" target="_blank">5 steps to presenting research</a><br />
+<li>Bob Denham, <a
+href="http://communicatingeconomics.com/tools/communicating-economics-using-video-film"
+target="_blank">5 steps to presenting research</a><br />
 </li>
-<li>Bob Denham, <a href="http://communicatingeconomics.com/resources/explain-your-economics-research-15-seconds" target="_blank">Explain your research in 15 seconds</a></li>
+<li>Bob Denham, <a
+href="http://communicatingeconomics.com/resources/explain-your-economics-research-15-seconds"
+target="_blank">Explain your research in 15 seconds</a></li>
 </ul>
 <p>Other resources on presentations:</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=7Qtk1J44oGQ" target="_blank">Economics Network</a> (video, 2:19)<br />
+<li><a href="https://www.youtube.com/watch?v=7Qtk1J44oGQ"
+target="_blank">Economics Network</a> (video, 2:19)<br />
 </li>
-<li>Paul Krugman (Nobel Prize winner) on <a href="https://voxeu.org/content/communicating-economics" target="_blank">Communicating Economics</a><br />
+<li>Paul Krugman (Nobel Prize winner) on <a
+href="https://voxeu.org/content/communicating-economics"
+target="_blank">Communicating Economics</a><br />
 </li>
-<li>Bank of England, <a href="https://bankunderground.co.uk/2018/11/22/simply-is-best-enhancing-trust-and-understanding-of-central-banks-through-better-communications/" target="_blank">Simple is best: enhancing trust and understanding of central banks through better communication</a><br />
+<li>Bank of England, <a
+href="https://bankunderground.co.uk/2018/11/22/simply-is-best-enhancing-trust-and-understanding-of-central-banks-through-better-communications/"
+target="_blank">Simple is best: enhancing trust and understanding of
+central banks through better communication</a><br />
 </li>
-<li>TED blog, <a href="https://blog.ted.com/12-pieces-of-advice-for-giving-talks-that-have-impact/" target="_blank">12 pieces of advice for giving talks that have impact</a><br />
+<li>TED blog, <a
+href="https://blog.ted.com/12-pieces-of-advice-for-giving-talks-that-have-impact/"
+target="_blank">12 pieces of advice for giving talks that have
+impact</a><br />
 </li>
-<li>Benjamin Bratton, <a href="https://www.theguardian.com/commentisfree/2013/dec/30/we-need-to-talk-about-ted" target="_blank">We need to talk about TED</a></li>
-<li>Julian Treasure (9:58) <a href="https://www.youtube.com/watch?v=eIho2S0ZahI" target="_blank">How to speak so that people want to listen</a><br />
+<li>Benjamin Bratton, <a
+href="https://www.theguardian.com/commentisfree/2013/dec/30/we-need-to-talk-about-ted"
+target="_blank">We need to talk about TED</a></li>
+<li>Julian Treasure (9:58) <a
+href="https://www.youtube.com/watch?v=eIho2S0ZahI" target="_blank">How
+to speak so that people want to listen</a><br />
 </li>
-<li>Lindsay Kolowich, <a href="https://blog.hubspot.com/marketing/ted-talk-public-speaking-study" target="_blank">The science of a great TED talk: what makes a speech go viral</a><br />
+<li>Lindsay Kolowich, <a
+href="https://blog.hubspot.com/marketing/ted-talk-public-speaking-study"
+target="_blank">The science of a great TED talk: what makes a speech go
+viral</a><br />
 </li>
-<li>Paul Edwards, <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-857-network-and-computer-security-spring-2014/projects/MIT6_857S14_proj_umic-talk.pdf" target="_blank">How to give an academic talk</a></li>
+<li>Paul Edwards, <a
+href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-857-network-and-computer-security-spring-2014/projects/MIT6_857S14_proj_umic-talk.pdf"
+target="_blank">How to give an academic talk</a></li>
 </ul>
 </div>
 <div id="examples-of-good-talks" class="section level3">
 <h3>Examples of good talks</h3>
 <ul>
-<li>David Autor (18:38) <a href="https://www.ted.com/talks/david_autor_why_are_there_still_so_many_jobs?language=en" target="_blank">Will automation take away all our jobs?</a><br />
+<li>David Autor (18:38) <a
+href="https://www.ted.com/talks/david_autor_why_are_there_still_so_many_jobs?language=en"
+target="_blank">Will automation take away all our jobs?</a><br />
 </li>
-<li>Marina Della Giusta (1:10) <a href="https://www.youtube.com/watch?v=YUwgP0pucJQ" target="_blank">Economists and Scientists on Twitter: A Tale of Two Styles?</a><br />
+<li>Marina Della Giusta (1:10) <a
+href="https://www.youtube.com/watch?v=YUwgP0pucJQ"
+target="_blank">Economists and Scientists on Twitter: A Tale of Two
+Styles?</a><br />
 </li>
-<li>Robert Waldinger (12:47) <a href="https://www.ted.com/talks/robert_waldinger_what_makes_a_good_life_lessons_from_the_longest_study_on_happiness#t-43155" target="_blank">What makes a good life? lessons from the longest study on happiness</a><br />
+<li>Robert Waldinger (12:47) <a
+href="https://www.ted.com/talks/robert_waldinger_what_makes_a_good_life_lessons_from_the_longest_study_on_happiness#t-43155"
+target="_blank">What makes a good life? lessons from the longest study
+on happiness</a><br />
 </li>
-<li>The <a href="https://www.youtube.com/channel/UCP4yvr6Vd-CW8_e739rJ2-g" target="_blank">Royal Economic Society youtube channel</a> has many other talks ranging from 1 minute to 1 hour in length<br />
+<li>The <a
+href="https://www.youtube.com/channel/UCP4yvr6Vd-CW8_e739rJ2-g"
+target="_blank">Royal Economic Society youtube channel</a> has many
+other talks ranging from 1 minute to 1 hour in length<br />
 </li>
-<li>The <a href="https://www.youtube.com/channel/UCvdfVF9jI_PqV5jtqateNBA" target="_blank">IFS youtube channel</a> has many talks ranging from 45 seconds to over an hour<br />
+<li>The <a
+href="https://www.youtube.com/channel/UCvdfVF9jI_PqV5jtqateNBA"
+target="_blank">IFS youtube channel</a> has many talks ranging from 45
+seconds to over an hour<br />
 </li>
-<li><a href="http://timharford.com/" target="_blank">Tim Hartford</a> does a range of activities that communicate economics, including present the <a href="https://www.bbc.co.uk/programmes/b006qshd/episodes/player" target="_blank">BBC’s radio show More or Less</a>. His TED talk <a href="https://www.ted.com/talks/tim_harford" target="_blank">Trial, error and the God complex</a> is good.</li>
+<li><a href="http://timharford.com/" target="_blank">Tim Hartford</a>
+does a range of activities that communicate economics, including present
+the <a href="https://www.bbc.co.uk/programmes/b006qshd/episodes/player"
+target="_blank">BBC’s radio show More or Less</a>. His TED talk <a
+href="https://www.ted.com/talks/tim_harford" target="_blank">Trial,
+error and the God complex</a> is good.</li>
 </ul>
 </div>
 </div>
 <div id="graphical-representation-of-data" class="section level2">
 <h2>Graphical representation of data</h2>
-<p>You should consider not useing pie charts and particularly not tree charts.</p>
+<p>You should consider not useing pie charts and particularly not tree
+charts.</p>
 <ul>
-<li>Healy (2018) <a href="https://socviz.co/" target="_blank">Data Visualization</a><br />
+<li>Healy (2018) <a href="https://socviz.co/" target="_blank">Data
+Visualization</a><br />
 </li>
-<li>Heer and Bostock (2010) <a href="http://vis.stanford.edu/files/2010-MTurk-CHI.pdf" target="_blank">Crowdsourcing graphical perception: using Mechanical Turk to assess visualization design</a><br />
+<li>Heer and Bostock (2010) <a
+href="http://vis.stanford.edu/files/2010-MTurk-CHI.pdf"
+target="_blank">Crowdsourcing graphical perception: using Mechanical
+Turk to assess visualization design</a><br />
 </li>
-<li>Reynolds, Pilling and Marteau (2018) <a href="https://www.sciencedirect.com/science/article/pii/S0277953618305276?via%3Dihub" target="_blank">Communicating quantitative evidence of policy effects</a>, Social Science &amp; Medicine, 218, 1-12</li>
+<li>Reynolds, Pilling and Marteau (2018) <a
+href="https://www.sciencedirect.com/science/article/pii/S0277953618305276?via%3Dihub"
+target="_blank">Communicating quantitative evidence of policy
+effects</a>, Social Science &amp; Medicine, 218, 1-12</li>
 </ul>
 </div>
 <div id="infographics" class="section level2">
@@ -430,28 +503,52 @@ div.tocify {
 <div id="on-how-to-make-a-good-infographic" class="section level3">
 <h3>On how to make a good infographic</h3>
 <ul>
-<li>Reboot <a href="https://reboot.org/2016/03/17/beginners-guide-meaningful-infographics/" target="_blank">A beginner’s guide to more meaningful infographics</a><br />
+<li>Reboot <a
+href="https://reboot.org/2016/03/17/beginners-guide-meaningful-infographics/"
+target="_blank">A beginner’s guide to more meaningful
+infographics</a><br />
 </li>
-<li>Easelly <a href="https://online.manchester.ac.uk/bbcswebdav/pid-6753372-dt-content-rid-28142219_1/xid-28142219_1" target="_blank">CompleteGuideToInfographics</a><br />
+<li>Easelly <a
+href="https://online.manchester.ac.uk/bbcswebdav/pid-6753372-dt-content-rid-28142219_1/xid-28142219_1"
+target="_blank">CompleteGuideToInfographics</a><br />
 </li>
-<li>Easelly <a href="https://www.youtube.com/c/Easellytutorials" target="_blank">video tutorials</a><br />
+<li>Easelly <a href="https://www.youtube.com/c/Easellytutorials"
+target="_blank">video tutorials</a><br />
 </li>
-<li>Visme <a href="https://online.manchester.ac.uk/bbcswebdav/pid-6753372-dt-content-rid-28142220_1/xid-28142220_1" target="_blank">How to Make an Infographic - A Visual Guide for Beginners</a></li>
+<li>Visme <a
+href="https://online.manchester.ac.uk/bbcswebdav/pid-6753372-dt-content-rid-28142220_1/xid-28142220_1"
+target="_blank">How to Make an Infographic - A Visual Guide for
+Beginners</a></li>
 </ul>
 </div>
-<div id="on-the-visual-and-design-aspects-of-infographics" class="section level3">
+<div id="on-the-visual-and-design-aspects-of-infographics"
+class="section level3">
 <h3>On the visual and design aspects of infographics</h3>
 <ul>
-<li>Piktochart <a href="https://piktochart.com/blog/8-types-of-infographics-which-right-for-you/" target="_blank">8 types of infographics: which is right for you?</a><br />
+<li>Piktochart <a
+href="https://piktochart.com/blog/8-types-of-infographics-which-right-for-you/"
+target="_blank">8 types of infographics: which is right for
+you?</a><br />
 </li>
-<li>Canva <a href="https://www.canva.com/learn/best-infographics/" target="_blank">40 brilliant and complex topics explained perfectly by infographics</a><br />
+<li>Canva <a href="https://www.canva.com/learn/best-infographics/"
+target="_blank">40 brilliant and complex topics explained perfectly by
+infographics</a><br />
 </li>
-<li>The Guardian <a href="https://www.theguardian.com/global-development-professionals-network/2014/aug/28/interactive-infographics-development-data" target="_blank">How to make infographics: a beginner’s guide to data visualisation</a><br />
+<li>The Guardian <a
+href="https://www.theguardian.com/global-development-professionals-network/2014/aug/28/interactive-infographics-development-data"
+target="_blank">How to make infographics: a beginner’s guide to data
+visualisation</a><br />
 </li>
-<li>The Financial Times <a href="https://www.ft.com/content/4743ce96-e4bf-11e7-97e2-916d4fbac0da" target="_blank">Design secrets behind the FT’s best charts of the year</a></li>
+<li>The Financial Times <a
+href="https://www.ft.com/content/4743ce96-e4bf-11e7-97e2-916d4fbac0da"
+target="_blank">Design secrets behind the FT’s best charts of the
+year</a></li>
 </ul>
-<p>more about infographics: <a href="https://infographicjournal.com/" target="_blank">infographic journal</a></p>
-<p>And a funny article on some really rubbish infographics: <a href="https://www.theguardian.com/news/datablog/gallery/2013/aug/01/16-useless-infographics" target="_blank">16 useless infographics</a>, The Guardian;</p>
+<p>more about infographics: <a href="https://infographicjournal.com/"
+target="_blank">infographic journal</a></p>
+<p>And a funny article on some really rubbish infographics: <a
+href="https://www.theguardian.com/news/datablog/gallery/2013/aug/01/16-useless-infographics"
+target="_blank">16 useless infographics</a>, The Guardian;</p>
 </div>
 </div>
 
@@ -493,6 +590,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
