@@ -24,11 +24,11 @@ output:
 
 This [online resource](https://www.escholar.manchester.ac.uk/learning-objects/mle/introducing-referencing/story_html5.html) explores the principles behind referencing, highlighting why it is good academic practice. It outlines when and how you need to reference, and how to read a reference when following up a source listed on a reading list or bibliography. (UoM, Learning Essentials)
 
-Here we use the Harvard referencing style and all your referencing should adhere to this [guidance](http://subjects.library.manchester.ac.uk/referencing/referencing-harvard). (UoM)
+Here we use the Harvard referencing style and all your referencing should adhere to this [guidance](https://subjects.library.manchester.ac.uk/referencing-new/harvard). (UoM)
 
 The University of Manchester provides a range of [resources for referencing](http://subjects.library.manchester.ac.uk/referencing).
 
-If you do not reference properly you can easily fall foul of University's plagiarism rules. It is vital that you understand the regulations. You may want to go through this short online resource produced by the UoM Library to [undestand what palgiarism is and techniques to avoid any problems](https://www.escholar.manchester.ac.uk/learning-objects/mle/avoiding-plagiarism/story_html5.html){target="_blank"}.
+If you do not reference properly you can easily fall foul of University's plagiarism rules. It is vital that you understand the regulations. You may want to go through this short online resource produced by the UoM Library to [undestand what palgiarism is and techniques to avoid any problems](https://www.education.library.manchester.ac.uk/mle/academic-integrity/#/){target="_blank"}.
 
 ## On writing an essay
 
