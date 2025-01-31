@@ -102,7 +102,6 @@ This will imply statistical programming of sorts. The Economics Department of th
 
 Python is a generalist programming software and used often for Data Science Work. There are many online resources to learn R. Here are links to materials for a workshop (February 2024) run for University of Manchester students: [Google Collab](https://colab.research.google.com/drive/1yrrfOmWZoKSOhfzeDKhFU-Ml_5PFiBSt), [Jupyter Notebook](https://livemanchesterac-my.sharepoint.com/:u:/g/personal/ralf_becker_manchester_ac_uk/ERZuTTamacNCoBhJ7KHvtjYB2VJAL5t5JXgSyo5Mgbmg9Q?e=PKUhwh) for use in VisualStudio.
 
-
 Another popular statistical language in Economics is **STATA** and the [Stata Corporation](https://www.stata.com/links/resources-for-learning-stata/) provides a list of useful STATA tutorials.
 
 
